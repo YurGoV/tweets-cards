@@ -12,6 +12,11 @@
     "lint:js": "eslint src/**/*.{js,jsx}"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/montserrat": "^4.5.14",
+    "@mui/material": "^5.13.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1"
