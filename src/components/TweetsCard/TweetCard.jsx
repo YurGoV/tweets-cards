@@ -2,15 +2,16 @@ import Box from '@mui/material/Box';
 import { tweetCardStyles } from './tweetCardStyles';
 import goITlogo from '../../assets/GoITlogo.png';
 import bubbledIcons from '../../assets/icons.png';
-import userPic from '../../assets/userPic.png';
+import userPicBorder from '../../assets/userPicBorder.png';
 import Rectangle from '../../assets/Rectangle.png';
+import FakeAvatar from '../../assets/fakeAvatar.jpg';
+
 import { Button } from '@mui/material';
 
 // import PropTypes from 'prop-types';
 
 // export const TweetCard = ({ data }) => {
 export const TweetCard = () => {
-
   return (
     <Box sx={tweetCardStyles}>
       <Box
@@ -56,16 +57,37 @@ export const TweetCard = () => {
           position: 'relative',
           bottom: '38px',
           justifyContent: 'space-around',
+          zIndex: '1'
         }}
       >
-        <img src={userPic} alt='user picture' />
+        <img src={userPicBorder} alt='user picture' />
+        <Box
+          borderRadius='25%'
+          sx={{
+            display: 'flex',
+            width: '65px',
+            height: '65px',
+            top: '8px',
+            // left: '3px',
+            // backgroundRepeat: 'no-repeat',
+            // backgroundSize: 'cover',
+            border: '1',
+            borderRadius: '50%',
+            position: 'absolute',
+            // borderColor: 'red',
+            overflow: 'hidden',
+            zIndex: '-1'
+          }}
+        >
+          <img src={FakeAvatar} alt='user picture' />
+        </Box>
       </Box>
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
-            position: 'relative',
-            bottom: '38px',
+          position: 'relative',
+          bottom: '38px',
           justifyContent: 'space-between',
           minHeight: '64px',
           paddingTop: '20px',
