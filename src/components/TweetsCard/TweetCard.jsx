@@ -57,7 +57,7 @@ export const TweetCard = () => {
           position: 'relative',
           bottom: '38px',
           justifyContent: 'space-around',
-          zIndex: '1'
+          zIndex: '1',
         }}
       >
         <img src={userPicBorder} alt='user picture' />
@@ -68,15 +68,11 @@ export const TweetCard = () => {
             width: '65px',
             height: '65px',
             top: '8px',
-            // left: '3px',
-            // backgroundRepeat: 'no-repeat',
-            // backgroundSize: 'cover',
             border: '1',
             borderRadius: '50%',
             position: 'absolute',
-            // borderColor: 'red',
             overflow: 'hidden',
-            zIndex: '-1'
+            zIndex: '-1',
           }}
         >
           <img src={FakeAvatar} alt='user picture' />
@@ -97,6 +93,7 @@ export const TweetCard = () => {
         <p>FOLLOWERS</p>
       </Box>
       <Button
+        disableFocusRipple
         variant='contained'
         size='medium'
         sx={{
@@ -105,14 +102,32 @@ export const TweetCard = () => {
           marginLeft: 'auto',
           marginRight: 'auto',
           padding: '10px 28px',
-          background: '#EBD8FF',
+          backgroundColor: '#EBD8FF',
+          borderColor: '#EBD8FF',
+          // border: 'none',
           boxShadow: '0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25)',
           borderRadius: '10.3108px',
-          color: 'black',
+          color: '#373737',
           '&:hover': {
             backgroundColor: '#ae78e7',
             borderColor: '#0062cc',
             boxShadow: 'none',
+            fontWeight: 'bold',
+          },
+          // '&:active': {
+          //   // backgroundColor: '#ae78e7',
+          //   // borderColor: '#0062cc',
+          //   // boxShadow: 'none',
+          //   // fontWeight: 'bold',
+          //   // borderColor: '#EBD8FF',
+          //   border: 'none',
+          //   outline: 'none',
+          // },
+          '&:focus': {
+            boxShadow: 'none',
+            borderColor: '#EBD8FF',
+            border: 'none',
+            outline: 'none',
           },
         }}
       >
