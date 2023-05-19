@@ -1,17 +1,25 @@
 import Box from '@mui/material/Box';
-import { tweetCardStyles } from './tweetCardStyles';
+import { BoxUserInfo, tweetCardStyles } from './tweetCardStyles';
 import goITlogo from '../../assets/GoITlogo.png';
 import bubbledIcons from '../../assets/icons.png';
 import userPicBorder from '../../assets/userPicBorder.png';
 import Rectangle from '../../assets/Rectangle.png';
 import FakeAvatar from '../../assets/fakeAvatar.jpg';
 
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
 // import PropTypes from 'prop-types';
 
 // export const TweetCard = ({ data }) => {
-export const TweetCard = () => {
+export const TweetCard = (data) => {
+  console.log('CL: ~ file: TweetCard.jsx:15 ~ data:', data);
+  const { avatar, tweets, followers } = data;
+  // console.log(
+  //   'CL: ~ file: TweetCard.jsx:15 ~ data:',
+  //   avatar,
+  //   tweets,
+  //   followers
+  // );
   return (
     <Box sx={tweetCardStyles}>
       <Box
@@ -75,64 +83,59 @@ export const TweetCard = () => {
             zIndex: '-1',
           }}
         >
-          <img src={FakeAvatar} alt='user picture' />
+          <img src={avatar} alt='user picture' />
         </Box>
       </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          position: 'relative',
-          bottom: '38px',
-          justifyContent: 'space-between',
-          minHeight: '64px',
-          paddingTop: '20px',
-        }}
-      >
-        <p>TWEETS</p>
-        <p>FOLLOWERS</p>
-      </Box>
-      <Button
-        disableFocusRipple
-        variant='contained'
-        size='medium'
-        sx={{
-          width: '196px',
-          height: '50px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          padding: '10px 28px',
-          backgroundColor: '#EBD8FF',
-          borderColor: '#EBD8FF',
-          // border: 'none',
-          boxShadow: '0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25)',
-          borderRadius: '10.3108px',
-          color: '#373737',
-          '&:hover': {
-            backgroundColor: '#ae78e7',
-            borderColor: '#0062cc',
-            boxShadow: 'none',
-            fontWeight: 'bold',
-          },
-          // '&:active': {
-          //   // backgroundColor: '#ae78e7',
-          //   // borderColor: '#0062cc',
-          //   // boxShadow: 'none',
-          //   // fontWeight: 'bold',
-          //   // borderColor: '#EBD8FF',
-          //   border: 'none',
-          //   outline: 'none',
-          // },
-          '&:focus': {
-            boxShadow: 'none',
-            borderColor: '#EBD8FF',
-            border: 'none',
-            outline: 'none',
-          },
-        }}
-      >
-        FOLLOW
-      </Button>
+      <BoxUserInfo>
+        <Box>
+          <p>{tweets} TWEETS</p>
+          {/* <p className='test'>TWEETS</p> */}
+          <p>{followers} FOLLOWERS</p>
+        </Box>
+        <Box sx={{ paddingTop: '26px' }}>
+          <Button
+            disableFocusRipple
+            variant='contained'
+            size='medium'
+            sx={{
+              width: '196px',
+              height: '50px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              padding: '10px 28px',
+              backgroundColor: '#EBD8FF',
+              borderColor: '#EBD8FF',
+              // border: 'none',
+              boxShadow: '0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25)',
+              borderRadius: '10.3108px',
+              color: '#373737',
+              '&:hover': {
+                backgroundColor: '#ae78e7',
+                borderColor: '#0062cc',
+                boxShadow: 'none',
+                fontWeight: 'bold',
+              },
+              // '&:active': {
+              //   // backgroundColor: '#ae78e7',
+              //   // borderColor: '#0062cc',
+              //   // boxShadow: 'none',
+              //   // fontWeight: 'bold',
+              //   // borderColor: '#EBD8FF',
+              //   border: 'none',
+              //   outline: 'none',
+              // },
+              '&:focus': {
+                boxShadow: 'none',
+                borderColor: '#EBD8FF',
+                border: 'none',
+                outline: 'none',
+              },
+            }}
+          >
+            FOLLOW
+          </Button>
+        </Box>
+      </BoxUserInfo>
     </Box>
   );
 };

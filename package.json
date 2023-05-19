@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "./utils/tweets_upload_to_digitalocean",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "lint:js": "eslint src/**/*.{js,jsx}"
@@ -16,6 +17,7 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/montserrat": "^4.5.14",
     "@mui/material": "^5.13.1",
+    "axios": "^1.4.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
