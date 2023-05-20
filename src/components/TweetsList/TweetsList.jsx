@@ -3,9 +3,6 @@ import { useEffect, useState } from 'react';
 // import { Avatar } from '@mui/material';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
-// import { Item, MovieBox, NavLinkStyled } from './MoviesList.styled';
-// import genericFilmPic from '../../img/film.jpg';
-// import PropTypes, { arrayOf } from 'prop-types';
 
 // import * as React from 'react';
 import Pagination from '@mui/material/Pagination';
@@ -17,26 +14,60 @@ import { tweetsListStyles } from './TweetsListStyles';
 
 import { Typography } from '@mui/material';
 import { TweetCard } from '../TweetsCard/TweetCard';
-import { fetchUsers } from '../../../utils/fetchUsers';
+import { fetchUsers } from '../../utils/fetchUsers';
+import { updateUserFollow } from '../../utils/updateUserFollow';
 
 // export const TweetsList = ({ tweets }) => {
 export const TweetsList = () => {
-  const [tweets, setTweets] = useState(null);
+  const [users, setUsers] = useState(null);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [newFollowed, setFollowed] = useState(null);
   // const location = useLocation();
   useEffect(() => {
     // console.log('Mounting phase: same when componentDidMount runs');
-    fetchUsers(page, setTweets, setTotalPages);
+    fetchUsers(page, setUsers, setTotalPages);
   }, [page]);
 
-  // console.log('CL: ~ file: TweetsList.jsx:21 ~ ttt:', users);
+  useEffect(() => {
+    if (newFollowed) {
+      // console.log('CL: ~ file: TweetsList.jsx:34 ~ newFollowed:', newFollowed);
+      const { userId, followed } = newFollowed;
 
-  if (!tweets) {
+      const index = users.findIndex((user) => user._id === userId);
+      const userFromState = users[index];
+      // console.log('CL: ~ file: TweetsList.jsx:39 ~ userFromState:', userFromState);
+
+      if (userFromState && userFromState.followed === followed) {
+        updateUserFollow({
+          userId,
+          followed,
+          users,
+          setUsers,
+        });
+      }
+      // console.log(
+      //   'CL: ~ file: TweetsList.jsx:41 ~ userFromState:',
+      //   userFromState
+      // );
+      // console.log('CL: ~ file: TweetsList.jsx:41 ~ updatedUsers:', updatedUsers);
+
+      // console.log('~userId, followed TweetsList.jsx [40]:', userId, followed);
+      // const updatedUsers = updateUserFollow({
+      //   userId,
+      //   followed,
+      //   users,
+      //   setUsers,
+      // });
+      // console.log('CL: ~ file: TweetsList.jsx:38 ~ updatedUsers:', updatedUsers);
+    }
+  }, [users, newFollowed]);
+
+  if (!users) {
     return <div>TTTT</div>;
   }
   // console.log('~tweets TweetsList.jsx [48]:', tweets);
-  console.log(tweets);
+  // console.log(users);
   // return <div>UUU</div>;
 
   return (
@@ -47,12 +78,15 @@ export const TweetsList = () => {
           spacing={{ xs: 2, md: 3 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
-          {tweets.map(({ _id, user, avatar, tweets, followers }) => (
+          {users.map(({ _id, avatar, tweets, followers, followed }) => (
             <Grid xs={2} sm={4} md={4} key={_id}>
               <TweetCard
                 avatar={avatar}
                 tweets={tweets}
                 followers={followers}
+                followed={followed}
+                userId={_id}
+                setFollowed={setFollowed}
               />
             </Grid>
           ))}
