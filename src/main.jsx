@@ -4,7 +4,6 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom';
 
-// import '@fontsource/roboto/300.css';
 import '@fontsource/montserrat/500.css';
 import '@fontsource/montserrat/600.css';
 

@@ -1,88 +1,43 @@
 import Box from '@mui/material/Box';
-import { BoxUserInfo, ButtonStyled, tweetCardStyles } from './tweetCardStyles';
+import {
+  BoxUserInfo,
+  ButtonStyled,
+  mainBoxStyles,
+  cardStyles,
+  bubbledIconsStyles,
+  rectangleStyles,
+  userPicBorderStyles,
+  avatarStyles,
+} from './tweetCardStyles';
 import goITlogo from '../../assets/GoITlogo.png';
 import bubbledIcons from '../../assets/icons.png';
 import userPicBorder from '../../assets/userPicBorder.png';
 import Rectangle from '../../assets/Rectangle.png';
-// import FakeAvatar from '../../assets/fakeAvatar.jpg';
 
-// import { Button, Typography } from '@mui/material';
-
-// import PropTypes from 'prop-types';
-
-// export const TweetCard = ({ data }) => {
 export const TweetCard = (data) => {
-  // console.log('CL: ~ file: TweetCard.jsx:15 ~ data:', data);
   const { avatar, tweets, followers, followed, userId, setFollowed } = data;
-  // console.log(
-  //   'CL: ~ file: TweetCard.jsx:15 ~ data:',
-  //   avatar,
-  //   tweets,
-  //   followers,
-  // userId,
-  // );
+
   return (
-    <Box sx={tweetCardStyles}>
-      <Box
-        sx={{
-          display: 'flex',
-          maxWidth: '76px',
-          padding: '0',
-          margin: '0',
-          left: '0%',
-          right: '0%',
-          textAlign: 'left',
-          //   background: 'rgba(255, 255, 255, 0.3)',
-        }}
-      >
+    <Box sx={mainBoxStyles}>
+      cardStyles
+      <Box sx={cardStyles}>
         <img src={goITlogo} alt='Go IT logo' />
       </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          position: 'relative',
-          bottom: '14px',
-          justifyContent: 'space-around',
-        }}
-      >
+      <Box sx={bubbledIconsStyles}>
         <img src={bubbledIcons} alt='bubbled Icons' />
       </Box>
       <Box
-        sx={{
-          display: 'flex',
-          position: 'relative',
-          top: '12px',
-          justifyContent: 'space-around',
-          width: '380px',
-          padding: '0',
-          marginLeft: '-20px',
-        }}
+        sx={rectangleStyles}
       >
         <img src={Rectangle} alt='rectangle' />
       </Box>
       <Box
-        sx={{
-          display: 'flex',
-          position: 'relative',
-          bottom: '38px',
-          justifyContent: 'space-around',
-          zIndex: '1',
-        }}
+        sx={userPicBorderStyles}
       >
         <img src={userPicBorder} alt='user picture' />
         <Box
           borderRadius='25%'
-          sx={{
-            display: 'flex',
-            width: '65px',
-            height: '65px',
-            top: '8px',
-            border: '1',
-            borderRadius: '50%',
-            position: 'absolute',
-            overflow: 'hidden',
-            zIndex: '-1',
-          }}
+          sx={avatarStyles}
         >
           <img src={avatar} alt='user picture' />
         </Box>
@@ -111,6 +66,4 @@ export const TweetCard = (data) => {
   );
 };
 
-// ContactsEl.propTypes = {
-//   data: PropTypes.array,
-// };
+
