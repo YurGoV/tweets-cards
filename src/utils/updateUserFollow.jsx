@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-export const updateUserFollow = async ({ userId, followed, users, setUsers }) => {
-
+export const updateUserFollow = async ({
+  userId,
+  followed,
+  users,
+  setUsers,
+}) => {
   const reversedFollowed = !followed;
   try {
     const user = await axios.patch(

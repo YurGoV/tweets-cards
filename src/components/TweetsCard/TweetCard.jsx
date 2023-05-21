@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
+
 import {
-  BoxUserInfo,
-  ButtonStyled,
   mainBoxStyles,
   cardStyles,
   bubbledIconsStyles,
@@ -9,6 +8,11 @@ import {
   userPicBorderStyles,
   avatarStyles,
 } from './tweetCardStyles';
+import {
+  BoxUserInfo,
+  ButtonStyled,
+} from './tweetsCardStyledComponents';
+
 import goITlogo from '../../assets/GoITlogo.png';
 import bubbledIcons from '../../assets/icons.png';
 import userPicBorder from '../../assets/userPicBorder.png';
@@ -19,34 +23,25 @@ export const TweetCard = (data) => {
 
   return (
     <Box sx={mainBoxStyles}>
-      cardStyles
       <Box sx={cardStyles}>
         <img src={goITlogo} alt='Go IT logo' />
       </Box>
       <Box sx={bubbledIconsStyles}>
         <img src={bubbledIcons} alt='bubbled Icons' />
       </Box>
-      <Box
-        sx={rectangleStyles}
-      >
+      <Box sx={rectangleStyles}>
         <img src={Rectangle} alt='rectangle' />
       </Box>
-      <Box
-        sx={userPicBorderStyles}
-      >
+      <Box sx={userPicBorderStyles}>
         <img src={userPicBorder} alt='user picture' />
-        <Box
-          borderRadius='25%'
-          sx={avatarStyles}
-        >
+        <Box borderRadius='25%' sx={avatarStyles}>
           <img src={avatar} alt='user picture' />
         </Box>
       </Box>
       <BoxUserInfo>
         <Box>
-          <p>{tweets} TWEETS</p>
-          {/* <p className='test'>TWEETS</p> */}
-          <p>{followers} FOLLOWERS</p>
+          <p>{tweets.toLocaleString('en-US')} TWEETS</p>
+          <p>{followers.toLocaleString('en-US')} FOLLOWERS</p>
         </Box>
         <Box sx={{ paddingTop: '26px' }}>
           <ButtonStyled
