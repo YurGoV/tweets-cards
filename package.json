@@ -3,11 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yurgov.github.io/tweets-cards/",
+  "homepage": "https://tweets.yurgo.fun/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "./utils/tweets_upload_to_digitalocean",
+    "deploy": "src/.deploy/tweets_upload_to_digitalocean",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "lint:js": "eslint src/**/*.{js,jsx}"

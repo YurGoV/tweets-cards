@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-src/utils/tweets_upload_to_digitalocean
+src/.deploy
 
 # Editor directories and files
 .vscode/*
