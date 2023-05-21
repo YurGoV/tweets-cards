@@ -4,12 +4,15 @@ import axios from 'axios';
 export const updateUserFollow = async ({ userId, followed, users, setUsers }) => {
   // console.log('CL: ~ file: updateUserFollow.jsx:5 ~ setUsers:', setUsers);
   // const BACKEND = 'https://tweets-api.yurgo.fun/api';
-  const BACKEND = 'http://localhost:3009/api';
+  // const BACKEND = 'http://localhost:3009/api';
   const reversedFollowed = !followed;
   try {
-    const user = await axios.patch(`${BACKEND}/users/update/${userId}`, {
-      followed: reversedFollowed,
-    });
+    const user = await axios.patch(
+      `${import.meta.env.VITE_BACKEND}/users/update/${userId}`,
+      {
+        followed: reversedFollowed,
+      }
+    );
     // console.log(
     //   'CL: ~ file: updateUserFollow.jsx:13 ~ user:',
     //   user.data.updatedUser
