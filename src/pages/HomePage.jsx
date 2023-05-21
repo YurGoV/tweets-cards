@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
+
 import { NavLinkStyled } from './HomePageStyles';
 
 const HomePage = () => {

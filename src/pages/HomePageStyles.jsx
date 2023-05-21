@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+
 import { experimentalStyled as styled } from '@mui/material/styles';
 
 export const NavLinkStyled = styled(NavLink)`
@@ -12,7 +13,6 @@ export const NavLinkStyled = styled(NavLink)`
   justify-content: center;
   border: 1px solid #4b2a99;
   border-radius: 4px;
-
   :hover,
   :focus-visible {
     color: darkcyan;

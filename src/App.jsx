@@ -4,7 +4,6 @@ import HomePage from './pages/HomePage';
 import TweetsPage from './pages/TweetsPage';
 
 function App() {
-
   return (
     <>
       <Routes>
@@ -16,4 +15,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
