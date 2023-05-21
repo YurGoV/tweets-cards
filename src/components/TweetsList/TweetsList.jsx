@@ -8,11 +8,11 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
-import axios from 'axios';
+// import axios from 'axios';
 
-import { tweetsListStyles } from './TweetsListStyles';
+// import { tweetsListStyles } from './TweetsListStyles';
 
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 import { TweetCard } from '../TweetsCard/TweetCard';
 import { fetchUsers } from '../../utils/fetchUsers';
 import { updateUserFollow } from '../../utils/updateUserFollow';

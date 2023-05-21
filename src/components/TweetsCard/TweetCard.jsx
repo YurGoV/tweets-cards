@@ -4,9 +4,9 @@ import goITlogo from '../../assets/GoITlogo.png';
 import bubbledIcons from '../../assets/icons.png';
 import userPicBorder from '../../assets/userPicBorder.png';
 import Rectangle from '../../assets/Rectangle.png';
-import FakeAvatar from '../../assets/fakeAvatar.jpg';
+// import FakeAvatar from '../../assets/fakeAvatar.jpg';
 
-import { Button, Typography } from '@mui/material';
+// import { Button, Typography } from '@mui/material';
 
 // import PropTypes from 'prop-types';
 
