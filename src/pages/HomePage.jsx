@@ -14,7 +14,7 @@ const HomePage = () => {
       <Box sx={{display: 'flex', paddingTop: '30px', justifyContent: 'center'}}>
         <Box component='nav'>
           <NavLinkStyled to={`/tweets`} state={{ from: location }}>
-            LET'S GO!
+            GO!
           </NavLinkStyled>
         </Box>
       </Box>
