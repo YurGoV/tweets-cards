@@ -1,34 +1,24 @@
-import reactLogo from '../assets/react.svg';
-import viteLogo from '/vite.svg';
-import { useState } from 'react';
-import '../App.css';
+import { Box } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import { NavLinkStyled } from './HomePageStyles';
 
 const HomePage = () => {
-  const [count, setCount] = useState(0);
-
   return (
-    <div>
-      <div>
-        <a href='https://vitejs.dev' target='_blank' rel='noopener noreferrer'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank' rel='noopener noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-        <p className='read-the-docs'>
-          Click on the Vite and React logos to learn more ..
-        </p>
-      </div>
-    </div>
+    <Box component='main'>
+      <Typography variant='h2' component='h1'>
+        Welcome to tweets follow page
+      </Typography>
+      <Typography variant='h5' component='h2'>
+        There you can see the statistic of our team popularity and follow them!
+      </Typography>
+      <Box sx={{display: 'flex', paddingTop: '30px', justifyContent: 'center'}}>
+        <Box component='nav'>
+          <NavLinkStyled to={`/tweets`} state={{ from: location }}>
+            LET'S GO!
+          </NavLinkStyled>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

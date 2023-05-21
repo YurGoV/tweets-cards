@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation} from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import Pagination from '@mui/material/Pagination';
@@ -6,8 +7,12 @@ import Stack from '@mui/material/Stack';
 import { TweetCard } from '../TweetsCard/TweetCard';
 import { fetchUsers } from '../../utils/fetchUsers';
 import { updateUserFollow } from '../../utils/updateUserFollow';
+import { NavLinkStyled } from '../../pages/HomePageStyles';
 
 export const TweetsList = () => {
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
+
   const [users, setUsers] = useState(null);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -41,7 +46,10 @@ export const TweetsList = () => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box component='main' sx={{ flexGrow: 1 }}>
+        <Box sx={{marginBottom: '30px'}}>
+          <NavLinkStyled to={backLinkHref}>BACK</NavLinkStyled>
+        </Box>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
@@ -75,4 +83,3 @@ export const TweetsList = () => {
     </>
   );
 };
-

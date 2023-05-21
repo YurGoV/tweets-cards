@@ -19,7 +19,6 @@ export const TweetCard = (data) => {
 
   return (
     <Box sx={mainBoxStyles}>
-      cardStyles
       <Box sx={cardStyles}>
         <img src={goITlogo} alt='Go IT logo' />
       </Box>
