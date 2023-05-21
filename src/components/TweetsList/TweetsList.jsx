@@ -23,6 +23,7 @@ export const TweetsList = () => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [newFollowed, setFollowed] = useState(null);
+
   // const location = useLocation();
   useEffect(() => {
     // console.log('Mounting phase: same when componentDidMount runs');
